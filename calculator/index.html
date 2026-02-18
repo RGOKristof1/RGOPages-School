@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="calc-wrapper">
-        <div id="calc-output">6484+65629</div>
+        <div id="calc-output"></div>
         <div id="calc-buttons-wrapper">
             <div id="left-buttons-wrapper">
                 <button onclick="clicked('+')">+</button>
@@ -31,8 +31,11 @@
                 <button onclick="clicked('.')">.</button>
                 <button onclick="clicked('=')">=</button>
             </div>
-            <div id="silence"></div>
+            <div id="delete-wrapper">
+              <button onclick="clicked('del')">⌫</button>
+            </div>
         </div>
+        <div id="logo">RGOPages</div>
     </div>
 <script src="script.js"></script>
 </body>
