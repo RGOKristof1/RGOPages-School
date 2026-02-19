@@ -19,36 +19,33 @@ input{
 #main-wrapper{
   background-color: #c1b9b967;
   width: 25rem;
+  margin: 1rem;
+  padding: .25rem;
+  border-radius: .25rem;
 }
 #add-bar-wrapper{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10fr 2fr 2fr 1fr;
   gap: .2rem;
   height: 1rem;
 }
-#event-name{
+#event-name-input{
   width: 7rem;
   transition: width 1s ease-in-out;
 }
-#event-name.event-name-focus{
+#event-name-input.event-name-input-focus{
   width: 100%;
   transition: width 1s ease-in-out;
 }
-#time.hidden, #date.hidden{
+#event-time-input.hidden, #event-date-input.hidden{
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-#time.shown, #date.shown{
+#event-time-input.shown, #event-date-input.shown{
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-#right-wrapper{
-  display: flex;
-  gap: .2rem;
-}
-#right-wrapper input{
-  width: 3rem;
-}
-#right-wrapper button{
-  width: 1rem;
+#main-wrapper input,#main-wrapper input{
+  font-size: .6rem;
+  border-radius: .25rem;
 }

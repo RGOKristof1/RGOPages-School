@@ -1,15 +1,15 @@
 function checkInput() {
-  if (document.getElementById("event-name").value != "") {
-    document.getElementById("event-name").classList.add("event-name-focus")
-    document.getElementById("time").classList.add("shown")
-    document.getElementById("date").classList.add("shown")
+  if (document.getElementById("event-name-input").value != "") {
+    document.getElementById("event-name-input").classList.add("event-name-input-focus")
+    document.getElementById("event-time-input").classList.add("shown")
+    document.getElementById("event-date-input").classList.add("shown")
 
   } else {
-    document.getElementById("event-name").classList.remove("event-name-focus")
-    document.getElementById("time").classList.remove("shown")
-    document.getElementById("date").classList.remove("shown")
+    document.getElementById("event-name-input").classList.remove("event-name-input-focus")
+    document.getElementById("event-time-input").classList.remove("shown")
+    document.getElementById("event-date-input").classList.remove("shown")
   }
 }
 
-document.getElementById("event-name").addEventListener("keyup",checkInput);
-document.getElementById("event-name").addEventListener("input",checkInput);
+document.getElementById("event-name-input").addEventListener("keyup",checkInput);
+document.getElementById("event-name-input").addEventListener("input",checkInput);
