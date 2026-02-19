@@ -1,4 +1,4 @@
-document.getElementById("event-name").addEventListener("keyup", (e) => {
+function checkInput() {
   if (document.getElementById("event-name").value != "") {
     document.getElementById("event-name").classList.add("event-name-focus")
     document.getElementById("time").classList.add("shown")
@@ -9,4 +9,7 @@ document.getElementById("event-name").addEventListener("keyup", (e) => {
     document.getElementById("time").classList.remove("shown")
     document.getElementById("date").classList.remove("shown")
   }
-});
+}
+
+document.getElementById("event-name").addEventListener("keyup",checkInput);
+document.getElementById("event-name").addEventListener("input",checkInput);

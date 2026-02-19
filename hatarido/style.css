@@ -28,19 +28,27 @@ input{
 }
 #event-name{
   width: 7rem;
-  transition: width 0.2s ease-out;
+  transition: width 1s ease-in-out;
+}
+#event-name.event-name-focus{
+  width: 100%;
+  transition: width 1s ease-in-out;
+}
+#time.hidden, #date.hidden{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#time.shown, #date.shown{
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 #right-wrapper{
   display: flex;
   gap: .2rem;
 }
-#event-name.event-name-focus{
-  width: 100%;
-  transition: width 0.5s ease-out;
+#right-wrapper input{
+  width: 3rem;
 }
-.hidden{
-  opacity: 0;
-}
-.shown{
-  opacity: 1;
+#right-wrapper button{
+  width: 1rem;
 }
