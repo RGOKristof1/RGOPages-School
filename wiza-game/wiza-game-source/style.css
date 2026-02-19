@@ -1,22 +1,26 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: clamp(16px,8vw,40px);
 }
 body{
-    background-color: rgb(18, 20, 32);
+  background-color: rgb(18, 20, 32);
+}
+button{
+  font-size: 30px;
+  width: 40px;
 }
 .playGround{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-columns: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: grid;
 }
 .playGround div{
-    background-color: #fff;
-    width: 100px;
-    height: 100px;
+  background-color: #fff;
+  border: black solid 1px;
 }
