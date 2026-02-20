@@ -8,7 +8,7 @@ html{
   font-size: clamp(16px,8vw,40px);
 }
 body{
-  background-color: black;
+  background-color: rgb(16, 23, 31);
   display: grid;
   justify-content: center;
   height: 100vh;
@@ -17,25 +17,39 @@ input{
   color: black;
 }
 #main-wrapper{
-  background-color: #c1b9b967;
-  width: 25rem;
-  margin: 1rem;
+  background-color: rgb(41, 52, 65);
+  border: solid rgba(0, 0, 0, 0.6) .1rem;
+  margin: .5rem;
   padding: .25rem;
   border-radius: .25rem;
 }
 #add-bar-wrapper{
   display: grid;
-  grid-template-columns: 10fr 2fr 2fr 1fr;
-  gap: .2rem;
+  grid-template-columns: 5fr 2fr 2fr 1fr;
+  column-gap: .1rem;
   height: 1rem;
 }
 #event-name-input{
-  width: 7rem;
+  width: 5rem;
   transition: width 1s ease-in-out;
 }
 #event-name-input.event-name-input-focus{
   width: 100%;
   transition: width 1s ease-in-out;
+}
+@media (max-width: 800px){
+  #add-bar-wrapper{
+    grid-template-columns: 10fr 4fr 1fr;
+    row-gap: .1rem;
+    height: 2rem;
+  }
+  #event-time-input{
+    grid-area: 2/2/2/2;
+  }
+  #event-time-input, #event-date-input{
+    width: 4.5rem;
+    font-size: .1rem;
+  }
 }
 #event-time-input.hidden, #event-date-input.hidden{
   opacity: 0;
@@ -45,7 +59,51 @@ input{
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-#main-wrapper input,#main-wrapper input{
-  font-size: .6rem;
-  border-radius: .25rem;
+#main-wrapper input,#add-bar-wrapper button{
+  border: none;
+  outline: none;
+  color: black;
+  background-color: #d6d6d6cf;
+  box-shadow: 0 .1rem .2rem black;
+  border: solid rgba(255, 255, 255, 0.8) .05rem;
+  padding: 0 .25rem;
+  gap: .1rem;
+  font-size: .5rem;
+  border-radius: .5rem;
+
+}
+
+
+#events{
+  display: grid;
+  margin-top: rem;
+}
+.event{
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: 10fr 4fr 1fr 1fr;
+  border: none;
+  outline: none;
+  background-color: #d6d6d6cf;
+  box-shadow: 0 .1rem .2rem black;
+  border: solid rgba(255, 255, 255, 0.8) .05rem;
+  margin-top: .2rem;
+  padding: .25rem;
+  border-radius: 1rem;
+}
+.event button{
+  border: none;
+  outline: none;
+  color: rgba(0, 0, 0, 0.421);
+  background-color: #d6d6d6cf;
+  box-shadow: 0 .1rem .1rem black;
+  border: solid rgba(255, 255, 255, 0.8) .05rem;
+  gap: .1rem;
+  font-size: .5rem;
+  border-radius: 15rem;
+}
+.event > *{
+  font-size: .4rem;
+  color: black;
 }
