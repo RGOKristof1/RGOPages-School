@@ -14,6 +14,13 @@ function checkInput() {
 document.getElementById("event-name-input").addEventListener("keyup",checkInput);
 document.getElementById("event-name-input").addEventListener("input",checkInput);
 
+function valueReset() {
+  document.getElementById("event-name-input").value = ""
+  document.getElementById("event-time-input").value = ""
+  document.getElementById("event-date-input").value = ""
+  checkInput()
+}
+valueReset()
 elements = []
 function generateUniqueID() {
   let uniqueID;
@@ -41,16 +48,41 @@ function generateUniqueID() {
   return uniqueID;
 }
 function displayList() {
+  document.getElementById("events").innerHTML = ""
+  for (let i = 0; i < elements.length; i++) {
+    document.getElementById("events").innerHTML += `<div class="event"><div class="event-name">${elements[i].eventName}</div><div class="event-date">${elements[i].eventDate}</div><div class="event-time">${elements[i].eventTime}</div><button onclick="deleteItem(${elements[i].eventId})">X</button></div>`
+  }
   
 }
 function addToList() {
-  elements.push({
-    eventId:generateUniqueID(),
-    eventName:document.getElementById("event-name-input").value,
-    eventDate:document.getElementById("event-date-input").value,
-    eventTime:document.getElementById("event-time-input").value
-  })
+  const uniqueId = generateUniqueID()
+  const nameValue = document.getElementById("event-name-input").value
+  const dateValue = document.getElementById("event-date-input").value
+  const timeValue = document.getElementById("event-time-input").value
+  console.log(dateValue)
+  console.log(timeValue)
+
+  if (nameValue != "" && dateValue != "" && timeValue != "") {
+    elements.push({
+      eventId:uniqueId,
+      eventName:nameValue,
+      eventDate:dateValue,
+      eventTime:timeValue
+    })
+  }
   console.log(elements)
-  console.log()
+  displayList()
+  valueReset()
+}
+function deleteItem(uniqueId) {
+  console.log("in delete")
+  for (let i = 0; i < elements.length; i++) {
+    console.log(elements[i].eventId)
+    console.log(uniqueId)
+    if (elements[i].eventId == uniqueId) {
+      console.log("element foundt")
+      elements.splice(i,1)
+    }
+  }
   displayList()
 }

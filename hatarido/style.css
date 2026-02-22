@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: white;
+  font-family: "Roboto Mono";
 }
 html{
   font-size: clamp(16px,8vw,40px);
 }
 body{
-  background-color: rgb(16, 23, 31);
+  background: #000324;
+  background: linear-gradient(118deg, rgba(0, 3, 36, 1) 75%, rgba(42, 42, 77, 1) 100%);
   display: grid;
   justify-content: center;
   height: 100vh;
@@ -17,8 +20,9 @@ input{
   color: black;
 }
 #main-wrapper{
-  background-color: rgb(41, 52, 65);
-  border: solid rgba(0, 0, 0, 0.6) .1rem;
+  background-color: rgba(42, 42, 77, .3);
+  border: solid rgba(75, 121, 141, 0.241) .1rem;
+  box-shadow: 0 .1rem .2rem black;
   margin: .5rem;
   padding: .25rem;
   border-radius: .25rem;
@@ -63,9 +67,9 @@ input{
   border: none;
   outline: none;
   color: black;
-  background-color: #d6d6d6cf;
+  background-color: rgba(55, 136, 250, 0.729);
   box-shadow: 0 .1rem .2rem black;
-  border: solid rgba(255, 255, 255, 0.8) .05rem;
+  border: solid rgba(88, 249, 238, 0.547) .05rem;
   padding: 0 .25rem;
   gap: .1rem;
   font-size: .5rem;
