@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: "Roboto Mono";
 }
 html{
@@ -16,12 +16,9 @@ body{
   justify-content: center;
   height: 100vh;
 }
-input{
-  color: black;
-}
 #main-wrapper{
   background-color: rgba(42, 42, 77, .3);
-  border: solid rgba(75, 121, 141, 0.241) .1rem;
+  border: solid rgba(75, 121, 141, 0.241) 1px;
   box-shadow: 0 .1rem .2rem black;
   margin: .5rem;
   padding: .25rem;
@@ -66,48 +63,76 @@ input{
 #main-wrapper input,#add-bar-wrapper button{
   border: none;
   outline: none;
-  color: black;
-  background-color: rgba(55, 136, 250, 0.729);
+  background: linear-gradient(10deg, rgba(55, 136, 250, .8) 30%, rgb(20, 37, 53) 100%);
   box-shadow: 0 .1rem .2rem black;
-  border: solid rgba(88, 249, 238, 0.547) .05rem;
+  border: solid rgba(255, 255, 255, 0.3) 2px;
   padding: 0 .25rem;
   gap: .1rem;
   font-size: .5rem;
   border-radius: .5rem;
 
 }
+#main-wrapper input:focus,#add-bar-wrapper button:focus{
+  outline: solid rgb(196, 170, 255) 1px;
+
+}
 
 
 #events{
   display: grid;
-  margin-top: rem;
 }
 .event{
   display: grid;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
   grid-template-columns: 10fr 4fr 1fr 1fr;
   border: none;
   outline: none;
-  background-color: #d6d6d6cf;
+  background: linear-gradient(10deg, rgba(55, 136, 250, .8) 30%, rgb(20, 37, 53) 100%);
   box-shadow: 0 .1rem .2rem black;
-  border: solid rgba(255, 255, 255, 0.8) .05rem;
+  border: solid rgba(255, 255, 255, 0.3) 2px;
   margin-top: .2rem;
   padding: .25rem;
   border-radius: 1rem;
 }
+.event-name{
+  overflow: auto;
+}
 .event button{
+  min-width: 1rem;
   border: none;
   outline: none;
-  color: rgba(0, 0, 0, 0.421);
-  background-color: #d6d6d6cf;
+  background: linear-gradient(10deg, rgba(255, 255, 255, .6) 0%, rgba(55, 136, 250, .8) 30%, rgb(0, 0, 0, .2) 100%);
+  border: solid rgba(255, 255, 255, 0.3) 2px;
   box-shadow: 0 .1rem .1rem black;
-  border: solid rgba(255, 255, 255, 0.8) .05rem;
   gap: .1rem;
   font-size: .5rem;
   border-radius: 15rem;
 }
 .event > *{
   font-size: .4rem;
-  color: black;
+}
+/* width */
+::-webkit-scrollbar {
+  width: .2rem;
+  height: .2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: .2rem;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(93, 109, 155); 
+  border: 1px white solid;
+  border-radius: .2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120, 145, 219);
 }

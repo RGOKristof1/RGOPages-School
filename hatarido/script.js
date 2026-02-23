@@ -21,7 +21,8 @@ function valueReset() {
   checkInput()
 }
 valueReset()
-elements = []
+
+elements = JSON.parse(localStorage.getItem("eventsList")) || []
 function generateUniqueID() {
   let uniqueID;
   let exists;
@@ -37,30 +38,32 @@ function generateUniqueID() {
         break; // kilépünk a FOR-ból
       }
     }
-
     if (exists) {
       continue; // újraindítja a WHILE-t
     }
-
     break; // ha nem létezett, kilépünk a WHILE-ból
   }
-
   return uniqueID;
 }
+
 function displayList() {
   document.getElementById("events").innerHTML = ""
   for (let i = 0; i < elements.length; i++) {
     document.getElementById("events").innerHTML += `<div class="event"><div class="event-name">${elements[i].eventName}</div><div class="event-date">${elements[i].eventDate}</div><div class="event-time">${elements[i].eventTime}</div><button onclick="deleteItem(${elements[i].eventId})">X</button></div>`
   }
-  
+  localStorage.setItem("eventsList",JSON.stringify(elements))
 }
+displayList()
 function addToList() {
+  if (document.getElementById("event-name-input").value == "rgo") {
+    document.getElementById("event-name-input").value = "something"
+    document.getElementById("event-time-input").value = "12:34"
+    document.getElementById("event-date-input").value = "2000-12-04"
+  }
   const uniqueId = generateUniqueID()
   const nameValue = document.getElementById("event-name-input").value
   const dateValue = document.getElementById("event-date-input").value
   const timeValue = document.getElementById("event-time-input").value
-  console.log(dateValue)
-  console.log(timeValue)
 
   if (nameValue != "" && dateValue != "" && timeValue != "") {
     elements.push({
@@ -69,10 +72,9 @@ function addToList() {
       eventDate:dateValue,
       eventTime:timeValue
     })
+    displayList()
+    valueReset()
   }
-  console.log(elements)
-  displayList()
-  valueReset()
 }
 function deleteItem(uniqueId) {
   console.log("in delete")
