@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="wiza-game-source/style.css">
 </head>
 <body>
+  <!--<div id="devtools">
     <input id="gridSizeInput" type="text" maxlength="2" style="width: 1.5rem;height: 1rem;font-size: .7rem;text-align: center;">
     <button onclick="generateGrid(document.getElementById('gridSizeInput').value)">G</button>
-    <div class="playGround" id="playGround"></div>
+  </div>-->
+  <div id="info-wrapper">
+    <div><p id="score">15</p><p>Points</p></div>
+    <div><p id="time">48</p><p>Time</p></div>
+  </div>
+  <div class="playGround" id="playGround"></div>
+  <div id="joy">
+    <button id="up"></button>
+    <button id="left"></button>
+    <button id="right"></button>
+    <button id="down"></button>
+  </div>
 <script src="wiza-game-source/scripts/main.js"></script>
 </body>
 </html>

@@ -1,16 +1,18 @@
+let gridSizeFr = 0
+
+
 function generateGrid(gridSize) {
+  gridSizeFr = gridSize
   document.getElementById("playGround").innerHTML = ""
   document.getElementById("playGround").style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
   for (let i = 0; i < gridSize; i++) {
     for (let i2 = 0; i2 < gridSize; i2++) {
       document.getElementById("playGround").innerHTML += `<div class="${i}r ${i2}c">${i}r ${i2}c</div>`
   }}
+  document.getElementById("devtools").remove()
   refreshScreen()
 }
 
-
-let playerPosition = [0,0]
-let lastPlayerPosition = [0,0]
 
 function refreshScreen() {
   console.log(`last player position:${lastPlayerPosition[0]}r ${lastPlayerPosition[1]}c`)
@@ -20,6 +22,9 @@ function refreshScreen() {
   document.getElementsByClassName(`${playerPosition[0]}r ${playerPosition[1]}c`)[0].setAttribute("id","player")
 }
 
+let playerPosition = [1,1]
+let lastPlayerPosition = [0,0]
+let playerAlive = true
 
 function movePlayer(direction) {
   lastPlayerPosition = [playerPosition[0],playerPosition[1]]
@@ -43,23 +48,32 @@ function movePlayer(direction) {
 }
 
 document.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "w":
-    case "ArrowUp":
+  if (e.key == "w" || e.key == "ArrowUp") {
+    if (playerPosition[0] == 0) {
+    } else {
       movePlayer("up")
-      break
-    case "d":
-    case "ArrowRight":
+    }
+  } else if (e.key == "d" || e.key == "ArrowRight") {
+    if (playerPosition[1] == gridSizeFr-1) {
+    } else {
       movePlayer("right")
-      break
-    case "s":
-    case "ArrowDown":
+    }
+  } else if (e.key == "s" || e.key == "ArrowDown") {
+    if (playerPosition[0] == gridSizeFr-1) {
+    } else {
       movePlayer("down")
-      break
-    case "a":
-    case "ArrowLeft":
+    }
+  } else if (e.key == "a" || e.key == "ArrowLeft") {
+    if (playerPosition[1] == 0) {
+    } else {
       movePlayer("left")
-      break
+    }
   }
 })
 
+function openJoy(){
+      //<button id="up"></button>
+      //<button id="left"></button>
+      //<button id="right"></button>
+      //<button id="down"></button>
+}

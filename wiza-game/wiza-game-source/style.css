@@ -1,30 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-html{
-  font-size: clamp(16px,8vw,40px);
-}
-body{
-  background-color: rgb(18, 20, 32);
+  font-family: "Roboto Mono";
 }
 button{
   font-size: 30px;
   width: 40px;
 }
+
+html{
+  font-size: clamp(16px,8vw,40px);
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(18, 20, 32);
+  height: 100vh;
+}
+
+#info-wrapper{
+
+  display: flex;
+  gap: 1rem;
+}
+#info-wrapper div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: .1rem;
+  background-color: #a52323;
+  color: white;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
+  font-size: 1rem;
+  padding: .2rem .6rem;
+}
+
 .playGround{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   display: grid;
   background-color: #a52323;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
   width: 10rem;
   height: 10rem;
 }
 .playGround div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
+  color: #cfcfcf;
   border: black solid 1px;
   font-size: .5rem;
   text-align: center;
@@ -33,3 +62,27 @@ button{
 #player{
   background-color: green;
 }
+
+footer{
+   position: relative;
+   height: 100%;
+}
+
+#joy{
+  display: grid;
+  gap: .1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 8rem;
+  width: 8rem;
+}
+#joy button{
+  width: 100%;
+  background-color: #a52323;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
+}
+#up{grid-area: 1/2/1/3;}
+#left{grid-area: 2/1/2/2;}
+#right{grid-area: 2/3/2/3;}
+#down{grid-area: 3/2/3/3;}
