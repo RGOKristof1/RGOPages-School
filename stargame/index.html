@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stargame</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        html{
+            font-size: clamp(16px,2vw,40px);
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            background-color: rgba(41, 41, 41, 0.658);
+            box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.5);
+            padding:.25rem;
+            margin: .25rem;
+            border: white 1px solid;
+            border-radius: .5rem;
+        }
+        button{
+            font-size: 1rem;
+            background-color: #424242;
+            border-radius: .5rem;
+            width: 3rem;
+            height: 2rem;
+        }
+        #playground{
+            position: relative;
+            height: 100%;
+            background-color: greenyellow;
+        }
+        .star{
+            position: absolute;
+            line-height: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Star Game</h1>
+        <button id="startButton" onclick="startGame()">Start</button>
+    </header>
+    <div id="playground"></div>
+<script src="game.js"></script>
+</body>
+</html>
