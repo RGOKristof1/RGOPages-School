@@ -41,26 +41,51 @@
       flex-direction: column;
     }
     h1{
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 250;
       padding-top: 1rem;
       border-top: rgb(240, 255, 190) solid 1px;
     }
     h2{
-      font-size: 3rem;
+      font-size: 2.5rem;
       max-width: 90vw;
       margin-bottom: 1rem;
     }
-    a{
+    main a{
       padding-left: 1rem;
       margin-top: 1rem;
       text-align: start;
       text-decoration: none;
       color: inherit;
-      font-size: 4rem;
+      font-size: 3rem;
       border-left: rgb(200, 255, 150) solid 1px;
     }
+    a{
+      text-decoration: none;
+      color: inherit;
+      font-size: 3rem;
+    }
+    span{
+      color: rgb(180, 255, 110);
+    }
     a:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
+  <style>
+    #home-button{
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 1rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      background-color: #ffffff10;
+    }
+    #home-button:hover{
       color: rgb(200, 255, 150);
     }
   </style>
@@ -68,7 +93,7 @@
 <body>
   <header>
     <h2>Welcome to</h2>
-    <h1>SchoolDot Libary</h1>
+    <h1><span><a href="/">SchoolDot</a></span> Libary</h1>
   </header>
   <main>
     <a href="/calculator/">Calculator</a>
@@ -80,5 +105,6 @@
     <a href="/reaction-time/">Reaction Time</a>
     <a href="/wiza-game/">Wiza-Game</a>
   </main>
+  <a href="/" id="home-button">Home</a>
 </body>
 </html>

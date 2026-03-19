@@ -51,8 +51,26 @@
             transform: translateX(-50%) translateY(-50%);
         }
     </style>
+<style>
+    #home-button{
+      text-decoration: none;
+      color: inherit;
+      font-size: 1rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 1rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      background-color: #ffffff10;
+    }
+    #home-button:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
 </head>
 <body>
+<a href="/" id="home-button">Home</a>
     <header>
         <h1>Star Game</h1>
         <button id="startButton" onclick="startGame()">Start</button>
