@@ -22,37 +22,48 @@
     html{
       font-size: clamp(16px, 2vw, 40px);
       height: 100%;
+      text-align: center;
     }
     body{
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       flex-direction: column;
 
       height: 100%;
       
       background-color: black;
-      color: rgb(167, 267, 0);
+      color: rgb(110, 184, 0);
 
     }
     h1{
       font-size: 3rem;
+      font-weight: 250;
+      margin-bottom: 1rem;
     }
     h2{
       font-size: 2rem;
+      max-width: 60vw;
+      padding-top: 1rem;
+      border-top: rgb(240, 255, 190) solid 1px;
     }
     a{
       text-decoration: none;
       color: inherit;
     }
     a:hover{
-      color: rgb(208, 255, 137);
+      color: rgb(200, 255, 150);
+    }
+    span{
+      color: rgb(180, 255, 110);
     }
   </style>
 </head>
 <body>
-  <h1>SchoolDot</h1>
-  <h2>This page is for school projects and stuff like that.</h2>
+  <div>
+    <h1>SchoolDot</h1>
+    <h2>This page is for <span><a href="https://school.rgopages.hu/libary">school projects</a></span> and stuff like that.</h2>
+  </div>
   <div>
     <h3>View the pages of SchoolDot here:</h3>
   <a href="https://school.rgopages.hu/libary">Libary Of SchoolDot</a>
