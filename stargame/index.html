@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             color: white;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
         }
         html{
             font-size: clamp(16px,2vw,40px);
@@ -33,6 +36,14 @@
             border: white 1px solid;
             border-radius: .5rem;
         }
+        input{
+            font-size: 1rem;
+            background-color: #424242;
+            border-radius: .5rem;
+            width: 3rem;
+            height: 2rem;
+            text-align: center;
+        }
         button{
             font-size: 1rem;
             background-color: #424242;
@@ -49,7 +60,10 @@
             position: absolute;
             line-height: 0;
             transform: translateX(-50%) translateY(-50%);
+            transition: all 1s linear;
+            font-size: 10vw;
         }
+        
     </style>
 <style>
     #home-button{
@@ -73,6 +87,7 @@
 <a href="/libary/" id="home-button">Home</a>
     <header>
         <h1>Star Game</h1>
+        <input type="text" value="🌕" id="io" maxlength="1">
         <button id="startButton" onclick="startGame()">Start</button>
     </header>
     <div id="playground"></div>
