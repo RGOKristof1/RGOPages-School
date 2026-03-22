@@ -5,7 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiza's Game</title>
     <link rel="stylesheet" href="wiza-game-source/style.css">
+    <style>
+      #home-button{
+        text-decoration: none;
+        color: inherit;
+        font-size: 1rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+        padding: .5rem;
+        border-radius: .5rem;
+        background-color: #ffffff10;
+      }
+      #home-button:hover{
+        color: rgb(200, 255, 150);
+      }
+    </style>
 </head>
+<<<<<<< HEAD
 <body id="body">
   <h1>"Wiza's Game"</h1>
   <div id="settings-wrapper">
@@ -18,6 +36,24 @@
       <input type="checkbox" id="joyInput">
     </div>
     <button onclick="startGame()">START</button>
+=======
+<body>
+<a href="/libary/" id="home-button">Home</a>
+  <!--<div id="devtools">
+    <input id="gridSizeInput" type="text" maxlength="2" style="width: 1.5rem;height: 1rem;font-size: .7rem;text-align: center;">
+    <button onclick="generateGrid(document.getElementById('gridSizeInput').value)">G</button>
+  </div>-->
+  <div id="info-wrapper">
+    <div><p id="score">15</p><p>Points</p></div>
+    <div><p id="time">48</p><p>Time</p></div>
+  </div>
+  <div class="playGround" id="playGround"></div>
+  <div id="joy">
+    <button id="up"></button>
+    <button id="left"></button>
+    <button id="right"></button>
+    <button id="down"></button>
+>>>>>>> d31956c98c2501036b2184a5a3d78f3b8299dce5
   </div>
 <script src="wiza-game-source/scripts/main.js"></script>
 <script src="wiza-game-source/scripts/game.js"></script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        html{
+            font-size: clamp(16px,2vw,40px);
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            position: relative;
+        }
+        div{
+            background-color: #66ff003f;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <style>
+        #home-button{
+        text-decoration: none;
+        color: inherit;
+        font-size: 1rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+        padding: .5rem;
+        border-radius: .5rem;
+        background-color: #ffffff10;
+        }
+        #home-button:hover{
+        color: rgb(200, 255, 150);
+        }
+    </style>
+</head>
+<body>
+<a href="/libary/" id="home-button">Home</a>
+    <h1 style="text-align: center;" id="startText">Kezdéshez nyomj bárhova!</h1>
+    <div onclick="startGame()" id="playground"></div>
+<script>
+function randomTimer(callback) {
+    const delay = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000;
+    setTimeout(callback, delay);
+}
+let timerStartTime = null;
+
+function startTimer() {
+    timerStartTime = performance.now();   // pontosabb mint Date.now()
+}
+
+function stopTimer() {
+    if (timerStartTime === null) return null;
+
+    const elapsed = performance.now() - timerStartTime;
+    timerStartTime = null; // reset
+
+    return elapsed; // ez ms-ben van
+}
+
+function timerEnd() {
+    document.getElementById("playground").onclick = null;
+    console.log("Timer finished!");
+    document.getElementById("playground").style.backgroundColor = "Green"
+    startTimer()
+    document.addEventListener("click", () => {
+        const elapsed = stopTimer();
+        document.getElementById("playground").style.backgroundColor = "Green"
+        document.getElementById("playground").innerText = elapsed
+    })
+}
+
+function startGame() {
+    document.getElementById("startText").remove()
+    document.getElementById("playground").style.backgroundColor = "Black"
+    randomTimer(timerEnd)
+}
+
+</script>
+</body>
+</html>

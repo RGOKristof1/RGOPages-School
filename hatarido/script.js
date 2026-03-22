@@ -88,3 +88,7 @@ function deleteItem(uniqueId) {
   }
   displayList()
 }
+ function removeAll() {
+  elements = []
+  displayList()
+ }

@@ -136,3 +136,9 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(120, 145, 219);
 }
+
+#remove-all-button{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}

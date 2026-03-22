@@ -64,8 +64,26 @@
             text-align: center;
         }
     </style>
+<style>
+    #home-button{
+      text-decoration: none;
+      color: inherit;
+      font-size: 1rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 1rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      background-color: #ffffff10;
+    }
+    #home-button:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
 </head>
 <body>
+<a href="/libary/" id="home-button">Home</a>
     <header>
         <input id="timer"  value="60" maxlength="3"></input>
         <h1>Emoji Catcher</h1><div id="gameMenu"><input id="emojiSelect"></input><button id="gameInterface" onclick="startGame()">Kezdés</button></div>

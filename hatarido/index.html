@@ -5,13 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Hatarido</title>
+  <style>
+    #home-button{
+      text-decoration: none;
+      color: inherit;
+      font-size: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 1rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      background-color: #ffffff10;
+    }
+    #home-button:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
 </head>
 <body>
+<a href="/libary/" id="home-button">Home</a>
   <div id="main-wrapper">
     <div id="add-bar-wrapper">
       <input type="search" id="event-name-input" autocomplete="off">
       <input type="date" id="event-date-input" class="hidden"><input type="time" id="event-time-input" class="hidden">
       <button onclick="addToList()">+</button>
+      <button id="remove-all-button" onclick="removeAll()">Remove All</button>
     </div>
     <div id="events">
     </div>
