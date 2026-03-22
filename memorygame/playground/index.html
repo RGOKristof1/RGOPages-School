@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Memory Game - Playgound</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 100;
+      }
+    html{
+      font-size: clamp(12px, 2vw, 20px);
+      height: 100%;
+    }
+    body{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+
+      height: 100%;
+      
+      background-color: black;
+      color: rgb(110, 184, 0);
+    }
+    #playground{
+      display: grid;
+      background-color: #a52323;
+      border: rgb(255, 255, 255) solid .1rem;
+      border-radius: .2rem;
+      width: 10rem;
+      height: 10rem;
+    }
+    #playground div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      color: #cfcfcf;
+      border: black solid 1px;
+      font-size: .25rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="playground"></div>
+<script>
+function generateGrid(gridSize) {
+  document.getElementById("playground").innerHTML = ""
+  document.getElementById("playground").style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
+  for (let i = 0; i < gridSize; i++) {
+    for (let i2 = 0; i2 < gridSize; i2++) {
+      document.getElementById("playground").innerHTML += `<div class="${i}r ${i2}c">${i}r ${i2}c</div>`
+  }}
+}
+generateGrid(4)
+</script>
+</body>
+</html>

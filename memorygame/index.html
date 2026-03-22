@@ -6,27 +6,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>RGOSchool</title>
+  <title>Memory Game</title>
   <style>
     *{
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
-    }
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 100;
+      }
     html{
       font-size: clamp(12px, 2vw, 20px);
       height: 100%;
-      text-align: center;
     }
     body{
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       flex-direction: column;
 
@@ -34,45 +33,37 @@
       
       background-color: black;
       color: rgb(110, 184, 0);
-
     }
-    main{
-      display: flex;
-      flex-direction: column;
+    header{
+      text-align: center;
     }
     h1{
-      font-size: 3rem;
-      font-weight: 250;
-      padding-top: 1rem;
-      border-top: rgb(240, 255, 190) solid 1px;
+      font-weight: 300;
     }
-    h2{
-      font-size: 2.5rem;
-      max-width: 90vw;
-      margin-bottom: 1rem;
+    span{
+      display: inline-block;
     }
-    main a{
-      padding-left: 1rem;
-      margin-top: 1rem;
-      text-align: start;
-      text-decoration: none;
+    span:hover{
+      color: rgb(200, 255, 150);
+    }
+    button{
       color: inherit;
-      font-size: 3rem;
-      border-left: rgb(200, 255, 150) solid 1px;
+      border: none;
+      background-color: transparent;
+      font-size: 2rem;
     }
     a{
       text-decoration: none;
       color: inherit;
-      font-size: 3rem;
-    }
-    span{
-      color: rgb(180, 255, 110);
     }
     a:hover{
       color: rgb(200, 255, 150);
     }
+    button:hover{
+      color: rgb(200, 255, 150);
+    }
   </style>
-  <style>
+<style>
     #home-button{
       text-decoration: none;
       color: inherit;
@@ -91,21 +82,23 @@
   </style>
 </head>
 <body>
-  <a href="/" id="home-button">Home</a>
   <header>
-    <h2>Welcome to</h2>
-    <h1><span><a href="/">SchoolDot</a></span> Libary</h1>
+    <h1>Memory Game</h1>
+    <h3>by</h3>
+    <h2><span>Mihálkovics Botond</span>, <span>Körvélyesi Ármin</span>, <span>Ujhelyi-Nagy Kristóf</span></h2>
   </header>
   <main>
-    <a href="/calculator/">Calculator</a>
-    <a href="/catcher/">Catcher</a>
-    <a href="/stargame/">Stargame</a>
-    <a href="/feladatok/">Feladatok</a>
-    <a href="/forgocukik/">Forgocukik</a>
-    <a href="/hatarido/">hatarido</a>
-    <a href="/reaction-time/">Reaction Time</a>
-    <a href="/wiza-game/">Wiza-Game</a>
-    <a href="/memorygame/">Memory Game</a>
+    <button onclick="redirect()">Start Game</button>
   </main>
+  <footer>
+    Made for <a href="/">RGOSchool</a> for demonstration purposes!
+  </footer>
+  <a href="/libary/" id="home-button">Home</a>
+  <script>
+    function redirect() {
+      window.location.href = "/memorygame/playground";
+      console.log("redirected")
+    }
+  </script>
 </body>
 </html>
