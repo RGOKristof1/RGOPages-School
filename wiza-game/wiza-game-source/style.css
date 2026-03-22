@@ -16,14 +16,13 @@ html{
 body{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   background-color: rgb(18, 20, 32);
   height: 100vh;
 }
 
 #info-wrapper{
-
   display: flex;
   gap: 1rem;
 }
@@ -36,8 +35,8 @@ body{
   color: white;
   border: rgb(255, 255, 255) solid .1rem;
   border-radius: .2rem;
-  font-size: 1rem;
-  padding: .2rem .6rem;
+  font-size: .8rem;
+  padding: .1rem .3rem;
 }
 
 .playGround{
@@ -55,7 +54,7 @@ body{
   background-color: #fff;
   color: #cfcfcf;
   border: black solid 1px;
-  font-size: .5rem;
+  font-size: .25rem;
   text-align: center;
 }
 
@@ -86,3 +85,38 @@ footer{
 #left{grid-area: 2/1/2/2;}
 #right{grid-area: 2/3/2/3;}
 #down{grid-area: 3/2/3/3;}
+
+
+
+#settings-wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: .1rem;
+  background-color: #a52323;
+  color: white;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
+  padding: .3rem;
+}
+.miniSetting{
+  font-size: .8rem;
+  background-color: #dd3232;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
+}
+#joyInput{
+  height: .5rem;
+  width: .5rem;
+}
+#settings-wrapper button{
+  text-align: center;
+  background-color: #dd3232;
+  color: white;
+  border: rgb(255, 255, 255) solid .1rem;
+  border-radius: .2rem;
+  padding: .1rem;
+  margin-top: .3rem;
+  width: 100%;
+}
+

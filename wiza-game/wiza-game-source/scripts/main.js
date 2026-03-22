@@ -24,24 +24,31 @@ function refreshScreen() {
 
 let playerPosition = [1,1]
 let lastPlayerPosition = [0,0]
-let playerAlive = true
+let inAccesableBlocks = [[2,1]]
 
 function movePlayer(direction) {
   lastPlayerPosition = [playerPosition[0],playerPosition[1]]
-  switch (direction) {
-    case "up":
+  if (direction == "up") {
+    if (playerPosition[0] == 0) {
+    } else {
       playerPosition[0] -= 1
-      break
-    case "right":
+    }
+  } else if (direction == "right") {
+    if (playerPosition[1] == gridSizeFr-1) {
+    } else {
       playerPosition[1] += 1
-      break
-    case "down":
+    }
+  } else if (direction == "down") {
+    if (playerPosition[0] == gridSizeFr-1) {
+    } else {
       playerPosition[0] += 1
-      break
-    case "left":
+    }
+  } else if (direction == "left") {
+    if (playerPosition[1] == 0) {
+    } else {
       playerPosition[1] -= 1
-      break
-  }
+    }
+  }Bob’s + Angel’s
   console.log("--------------------------------------------------------")
   console.log(`Moved the player ${direction} players position is ${playerPosition}`)
   refreshScreen()
@@ -71,9 +78,10 @@ document.addEventListener("keydown", (e) => {
   }
 })
 
-function openJoy(){
-      //<button id="up"></button>
-      //<button id="left"></button>
-      //<button id="right"></button>
-      //<button id="down"></button>
+let difficulty = document.getElementById("difficultyInput").value
+document.getElementById("difficultyInput").addEventListener("input", (e) =>{
+  difficulty = document.getElementById("difficultyInput").value
+});
+function showDifficulty() {
+   
 }
