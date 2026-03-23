@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Memory Game</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 100;
+      }
+    html{
+      font-size: clamp(12px, 2vw, 20px);
+      height: 100%;
+    }
+    body{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+
+      height: 100%;
+      
+      background-color: black;
+      color: rgb(110, 184, 0);
+    }
+    header{
+      text-align: center;
+    }
+    h1{
+      font-weight: 300;
+    }
+    span{
+      display: inline-block;
+    }
+    span:hover{
+      color: rgb(200, 255, 150);
+    }
+    button{
+      color: inherit;
+      border: none;
+      background-color: transparent;
+      font-size: 2rem;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover{
+      color: rgb(200, 255, 150);
+    }
+    button:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
+<style>
+    #home-button{
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 1rem;
+      padding: .5rem;
+      border-radius: .5rem;
+      background-color: #ffffff10;
+    }
+    #home-button:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Memory Game</h1>
+    <h3>by</h3>
+    <h2><span>Mihálkovics Botond</span>, <span>Körvélyesi Ármin</span>, <span>Ujhelyi-Nagy Kristóf</span></h2>
+  </header>
+  <main>
+    <button onclick="redirect()">Start Game</button>
+  </main>
+  <footer>
+    Made for <a href="/">RGOSchool</a> for demonstration purposes!
+  </footer>
+  <a href="/libary/" id="home-button">Home</a>
+  <script>
+    function redirect() {
+      window.location.href = "/memorygame/playground";
+      console.log("redirected")
+    }
+  </script>
+</body>
+</html>

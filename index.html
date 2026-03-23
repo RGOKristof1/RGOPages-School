@@ -3,18 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>RGOSchool</title>
   <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    }
+    html{
+      font-size: clamp(12px, 2vw, 20px);
+      height: 100%;
+      text-align: center;
+    }
     body{
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+
+      height: 100%;
       
       background-color: black;
-      color: rgb(153, 255, 0);
+      color: rgb(110, 184, 0);
+
+    }
+    h1{
+      font-size: 4rem;
+      font-weight: 250;
+      margin-bottom: 1rem;
+    }
+    h2{
+      font-size: 3rem;
+      max-width: 90vw;
+      padding-top: 1rem;
+      border-top: rgb(240, 255, 190) solid 1px;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover{
+      color: rgb(200, 255, 150);
+    }
+    span{
+      color: rgb(180, 255, 110);
+    }
+    footer{
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>This page is for school projects and stuff like that.</h1>
+  <header>
+    <h1>SchoolDot</h1>
+    <h2>This page is for <span><a href="/libary">school projects</a></span> and stuff like that.</h2>
+  </header>
+  <footer>
+    <h3>View the pages of SchoolDot here:</h3>
+  <a href="/libary">Libary Of SchoolDot</a>
+  </footer>
 </body>
 </html>
