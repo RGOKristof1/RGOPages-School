@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f5f5f5;
+}
+
+nav, header, section {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+#products {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  width: 180px;
+  background: #fafafa;
+  align-content: center;
+  justify-content: center;
+}
+.productCard > button{
+  margin-top: auto;
+}
+
+.productCard > p{
+  text-align: center;
+}
+
+#highlightedProduct img {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.discount {
+  border: 2px solid red;
+  background-color: #fff3f3;
+}
+
+.productimg{
+  width: 100%;
+}
+
+.stockinfo{
+  text-align: center;
+  color: green;
+  margin-top: auto;
+}
+
+#basket{
+  width: 70%;
+  height: 70%;
+  overflow: auto;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  background-color: white;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 2px solid green;
+}
+
+
+#basket > button{
+  margin-top: auto;
+}
+
+#basket > h2{
+  text-align: center;
+  font-family: bold;
+  background-color: green;
+  color: white;
+}
+
+#basketText{
+  text-align: center;
+}
+
+.basketItem{
+  font-size: 2rem;
+}
+
+#emptyBtnDiv{
+  align-self: center;
+}
+
+#contact{
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 1000;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 2px solid green;
+}
+
+#contact > h2{
+  text-align: center;
+  font-family: bold;
+  background-color: green;
+  color: white;
+}
+
+#contact > button{
+  margin-top: auto;
+}
+
+#services{
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 1000;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 2px solid green;
+}
+
+#services > h2{
+  text-align: center;
+  font-family: bold;
+  background-color: green;
+  color: white;
+}
+
+#services > button{
+  margin-top: auto;
+}
