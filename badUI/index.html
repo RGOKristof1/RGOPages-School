@@ -63,11 +63,24 @@
       z-index: 100000;
       color: black;
     }
+    h6{
+      text-align: center;
+      font-size: 2vw;
+    }
   </style>
 </head>
 <body id="hi">
-
+  <h6 id="h6">UDV AZ OLDALON</h6>
 <script>
+  let color1 = 0
+  let color2 = 0
+  let color3 = 0
+  setInterval(() => {
+    document.getElementById("h6").style.color = `rgb(${color1},${color2},${color3})`
+    color1++
+    color2 += 30
+    color3 += 9
+  }, 100);
 document.addEventListener('DOMContentLoaded', function() {
   const elements = [
     `
