@@ -65,54 +65,40 @@
     }
   </style>
 </head>
-<body id="hi" onload="myFunction()">
-  
-  
-  
-  
-  
+<body id="hi">
+
 <script>
-  function myFunction() {
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-        <div>
-          <button onclick="alert('Bumm')">Oriasi robbanas effect!</button>
-          <h4>CLICK HERE</h4>
-        </div>
-      `
-      console.log("letezik")
-    }, 1000);
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-        <h1>Worst Website ever</h1>
-      `
-      console.log("letezik")
-    }, 1000);
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-        <h2>Borzaszto Dolgok tortennek itt</h2>
-      `
-      console.log("letezik")
-    }, 1000);
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-        <img src="download.jpg">
-      `
-      console.log("letezik")
-    }, 1000);
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-        <p>Hint: valtoztassa az ablak méretét a csodás efektekert</p>
-      `
-      console.log("letezik")
-    }, 1000);
-    setInterval(() => {
-      document.getElementById("hi").innerHTML += `
-          <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut consectetur aperiam in quas iusto voluptates, esse quae at. Ex esse perferendis ullam delectus. Reiciendis illum debitis, quisquam accusantium esse explicabo.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse deleniti hic nobis libero, cum quis omnis placeat iusto distinctio architecto? Vero vitae quis architecto sunt numquam ad nam eos.</h3>
-      `
-      console.log("letezik")
-    }, 1000);
-  };
+document.addEventListener('DOMContentLoaded', function() {
+  const elements = [
+    `
+    <div>
+      <button onclick="alert('Bumm')">Oriasi robbanas effect!</button>
+      <h4>CLICK HERE</h4>
+    </div>
+    `,
+    `<h1>Worst Website ever</h1>`,
+    `<h2>Borzaszto Dolgok tortennek itt</h2>`,
+    `<img src="download.jpg">`,
+    `<p>Hint: valtoztassa az ablak méretét a csodás efektekert</p>`,
+    `
+    <h3>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi beatae odit commodi tempora iure, sapiente deleniti asperiores quasi placeat possimus eveniet sint eaque eum incidunt velit mollitia? Tempore, voluptatem officia!
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi beatae odit commodi tempora iure, sapiente deleniti asperiores quasi placeat possimus eveniet sint eaque eum incidunt velit mollitia? Tempore, voluptatem officia!
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi beatae odit commodi tempora iure, sapiente deleniti asperiores quasi placeat possimus eveniet sint eaque eum incidunt velit mollitia? Tempore, voluptatem officia!
+
+    </h3>
+    `
+  ];
+
+  const container = document.getElementById("hi");
+
+  elements.forEach((element, index) => {
+    setTimeout(() => {
+      container.insertAdjacentHTML("beforeend", element);
+      console.log("letezik");
+    }, index * 1000);
+  });
+});
 </script>
 </body>
 </html>
