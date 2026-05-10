@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght,ROND@100..900,0..100&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Login</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color: white;
+
+      /*Font Settings*/
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 100;
+    }
+    .doto-uniquifier{
+      font-family: "Doto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+      font-variation-settings:
+        "ROND" 100;
+    }
+    a{
+      color: inherit;
+      text-decoration: none;
+      transition: color .3s;
+    }
+    a:hover{
+      color: rgb(200, 255, 150);
+      transition: color .2s;
+    }
+    html{
+      font-size: clamp(12px, 2vw, 40px);
+      height: 100%;
+      text-align: center;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+    }
+    header{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.073);
+    }
+    h1{
+      color: rgb(110, 184, 0);
+    }
+    h2{
+      border-bottom: solid white 1px;
+      width: 15rem;
+      margin: 1rem;
+      padding-bottom: 1rem;
+    }
+    main{
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    section{
+      display: grid;
+      row-gap: 1rem;
+      text-align: start;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: .5rem;
+    }
+    input{
+      font-size: .6rem;
+      width: 10rem;
+      padding: .2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: rgb(200, 255, 150);
+      border-radius: .2rem;
+      border: white 1px solid;
+    }
+    input:hover{
+      background-color: rgba(255, 255, 255, 0.20)
+    }
+    input:focus{
+      outline-color: rgb(200, 255, 150);
+      outline-width: 1px;
+      outline-style: solid;
+      outline-offset: -2px;
+    }
+    .comment{
+      display: none;
+      padding-top: .1rem;
+      font-size: .5rem;
+      color: rgb(255, 150, 150);
+    }
+    .comment-show{
+      display: block;
+    }
+    #pass{
+      display: grid;
+    }
+    #forgot-pass{
+      font-size: .6rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: .1rem;
+    }
+    #forgot-pass:hover{
+      color: rgb(200, 255, 150);
+    }
+    #continue-button{
+      justify-self: end;
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: .2rem;
+      border: white 2px solid;
+      color: rgb(180, 255, 110);
+      padding: .1rem .2rem;
+      transition: all .3s;
+    }
+    #continue-button:hover{
+      background-color: rgba(255, 255, 255, 0.20);
+      border: rgb(200, 255, 150) 2px solid;
+      color: rgb(200, 255, 150);
+      transition: all .2s;
+    }
+    #continue-button.continue-disabled{
+      color: rgba(255, 255, 255, 0.50);
+      border: rgba(255, 255, 255, 0.2) 1px solid;
+      margin: 1px 1px 0 0;
+      background-color: rgba(255, 255, 255, 0.10);
+      cursor: not-allowed;
+    }
+    h4{
+      justify-self: center;
+      font-size: .8rem;
+    }
+    #register{
+      justify-self: center;
+      color: rgb(180, 255, 110);
+    }
+    #register:hover{
+      color: rgb(200, 255, 150);
+    }
+  </style>
+</head>
+<body>
+  <header><h1><a href="https://school.rgopages.hu" title="SchoolDot home page" class="doto-uniquifier">SchoolDot</a></h1></header>
+  <h2>Login</h2>
+  <main>
+    <section id="inputs">
+      <div id="user">
+        <h3>Username/email:</h3>
+        <input type="text" autocomplete="off">
+        <div class="comment ">Username/Email is not found!</div> <!--Have to give it the "comment-show" class to show!-->
+      </div>
+      <div id="pass">
+        <h3>Password:</h3>
+        <input type="password" autocomplete="off">
+        <div class="comment ">Wrong password!</div> <!--Have to give it the "comment-show" class to show!-->
+        <a id="forgot-pass" href="" title="password reset">Forgot password?</a> <!--MISSING HREF-->
+      </div>
+      <button id="continue-button" class="continue-disabled">Continue</button> <!--Continue button is disabled with "continue-disabled" class!-->
+    </section>
+    <section>
+      <h4>Don't have an account?</h4>
+      <a id="register" href="/register" title="register a new account">Register</a> <!--MISSING HREF-->
+    </section>
+  </main>
+  
+</body>
+</html>

@@ -1,174 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rossz UI</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bad UI - Regisztráció</title>
 <style>
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html{
-    height: 100vh;
-  }
-  body{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-  }
-  #window{
-    display: grid;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.488);
-    width: 30vw;
-    padding: 1vw;
-  }
-  .inputs{
-    margin: 1vw;
-  }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100vh;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #window{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1vw;
+            background-color: rgba(0, 0, 0, 0.444);
+        }
+        #adField{
+            display: none;
+            position: absolute;
+            background-color: #7c292943;
+            height: 100vh;
+            width: 100vw;
+            background-image: url("https://live.staticflickr.com/7416/9568907345_78ba920cb8_b.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }   
 </style>
+</head>
 <body>
-  <h1>Udv a tovablepeshez kerlek registralj!</h1>
-  <div id="window">
-    <div class="inputs">
-      <h2>Nev:</h2>
-      <input type="text" id="name" onblur="nameComment()">
-      <p id="nameComm"></p>
-    </div>
-    <div class="inputs">
-      <h2>anyja neve:</h2>
-      <select id="mothers" disabled onblur="mothersComment()">
-        <option></option>
-        <option>Tehen</option>
-        <option>Masik Apu</option>
-        <option>Izabella</option>
-      </select>
-    </div>
-    <div class="inputs">
-      <h2>email:</h2>
-      <input type="text" id="email" disabled onblur="emailComment()">
-      <p id="emailComm"></p>
-    </div>
-    <div class="inputs">
-      <h2>telefonszam:</h2>
-      <input type="date" id="tel" disabled onblur="telComment()">
-      <p id="telComm"></p>
-    </div>
-    <div class="inputs">
-      <h2>jelszo:</h2>
-      <input type="text" id="pass1" disabled onblur="pass1Comment()">
-      <p id="pass1Comm">Minimum 4 karakter</p>
-    </div>
-    <div class="inputs" id="pass2show" style="display: none;">
-      <h2>jelszo ujra:</h2>
-      <input type="text" id="pass2" onblur="showpass3()">
-      <p id="emailComm"></p>
-    </div>
-    <div class="inputs" id="pass3show" style="display: none;">
-      <h2>jelszo megint:</h2>
-      <input type="text" id="pass3" onblur="showpass4()">
-      <p id="emailComm"></p>
-    </div>
-    <div class="inputs" id="pass4show" style="display: none;">
-      <h2>utoljara megegyszer jelszo:</h2>
-      <input type="text" id="pass4">
-      <p id="emailComm"></p>
-    </div>
-    <div class="inputs">
-      <button onclick="tovabb()">Tovabb</button>
-    </div>
-  </div>
+<div id="adField">
+<button onclick="closeAdBreak()">X</button>
+</div>
+<h1>Üdv a tovább lépéshez regisztráljon!</h1>
+<div id="window">
+<div class="inputs">
+<h2>Név:</h2>
+<input type="text" id="name" autocomplete="off">
+<p id="nameComm">kötelező</p>
+</div>
+<div class="inputs">
+<h2>Anyja neve:</h2>
+<input type="text" id="mothers" autocomplete="off" disabled list="nameList">
+<datalist id="nameList">
+<option value="Tehén">
+<option value="Apu 2">
+<option value="Emese">
+</datalist>
+<p id="mothersComm">kötelező</p>
+</div>
+<div class="inputs">
+<h2>Email:</h2>
+<input type="text" id="email" autocomplete="off" disabled>
+<p id="emailComm">kötelező</p>
+</div>
+<div class="inputs">
+<h2>Telefon szám:</h2>
+<input type="text" id="tel" autocomplete="off" disabled>
+<p id="telComm">kötelező</p>
+</div>
+<div class="inputs">
+<h2>Jelszó:</h2>
+<input type="text" id="pass" autocomplete="off" disabled>
+<p id="passComm">kötelező</p>
+</div>
+ 
+        <div class="inputs">
+<button>Tovább</button>
+</div>
+</div>
+ 
 <script>
-  let emailAttempt = 0
-  let telAttempt = 0
-  let pass1Attempt = 0
-  let teljesitve = false
-
-  function tovabb() {
-    if (teljesitve == true) {
-      document.getElementById("window").innerHTML = ""
+    let registered = false
+ 
+    function adBreak(url) {
+        document.getElementById("adField").style.backgroundImage = `url("${url}")`
+        document.getElementById("adField").style.display = "block"//bypass kikapcsolas block-al
     }
-  }
-
-  function showPass2() {
-    document.getElementById("pass2show").style.display = "block"
-    document.getElementById("pass1").disabled = true
-  }
-  function showpass3() {
-    if (document.getElementById("pass2").value == "EROSJELSZO") {
-      document.getElementById("pass3show").style.display = "block"
-      document.getElementById("pass2").disabled = true
-    }
-  }
-  function showpass4() {
-    if (document.getElementById("pass3").value == "EROSJELSZO") {
-      document.getElementById("pass4show").style.display = "block"
-      document.getElementById("pass3").disabled = true
-      teljesitve = true
-    }
-  }
-
-  function nameComment() {
-    if (document.getElementById("name").value != "") {
-      document.getElementById("nameComm").innerText = `Fu tenyleg igy hivnak?😒`
-      document.getElementById("mothers").disabled = false
-      document.getElementById("name").disabled = true
-    }
-  }
-  function mothersComment() {
-    document.getElementById("email").disabled = false
-      document.getElementById("mothers").disabled = true
-  }
-  function emailComment() {
-    if (document.getElementById("email").value != "") {
-      document.getElementById("emailComm").innerText = `Requres "@gmail.com"`
-    }
-    if (document.getElementById("email").value != "" && emailAttempt == 1) {
-      document.getElementById("emailComm").innerText = `Sending Spam!`
-      document.getElementById("tel").disabled = false
-      document.getElementById("email").disabled = true
-    }
-    emailAttempt++
-  }
-  function telComment() {
-    if (document.getElementById("tel").value != "") {
-      document.getElementById("telComm").innerText = `Minta: +369830076`
-    }
-    if (document.getElementById("tel").value != "" && telAttempt == 1) {
-      document.getElementById("telComm").innerText = `not good`
-    }
-    if (document.getElementById("tel").value != "" && telAttempt == 2) {
-      document.getElementById("telComm").innerText = `Fine no telefon than`
-      document.getElementById("pass1").disabled = false
-      document.getElementById("tel").disabled = true
-    }
-    telAttempt++
-  }
-  function pass1Comment() {
-    if (document.getElementById("pass1").value != "") {
-      document.getElementById("pass1Comm").innerText = `maximum 7 karakter`
-    }
-    if (document.getElementById("pass1").value != "" && pass1Attempt == 1) {
-      document.getElementById("pass1Comm").innerText = `legyen benne $ szimbolum`
-    }
-    if (document.getElementById("pass1").value != "" && pass1Attempt == 2) {
-      document.getElementById("pass1Comm").innerText = `Legyen benne kis betu`
-    }
-    if (document.getElementById("pass1").value != "" && pass1Attempt == 3) {
-      document.getElementById("pass1Comm").innerText = `Legyen benne szam`
-    }
-    if (document.getElementById("pass1").value != "" && pass1Attempt == 4) {
-      document.getElementById("pass1Comm").innerText = `Tudod mit beirom neked`
-      document.getElementById("pass1").value = `EROSJELSZO`
-      showPass2()
-    }
-    pass1Attempt++
-  }
+    function closeAdBreak() {
+        document.getElementById("adField").style.display = "none"
+    }   
+ 
+    document.getElementById("name").addEventListener("keyup", () => {
+        const nameFeildValue = document.getElementById("name").value
+        if (nameFeildValue != "") {
+            document.getElementById("nameComm").innerText = `Ird már ez még rövid.`
+            document.getElementById("mothers").disabled = true
+            if (nameFeildValue.length >= 5) {
+                document.getElementById("nameComm").innerText = `Jó ez már elég hosszú.`
+                document.getElementById("mothers").disabled = false
+            }
+            if (nameFeildValue.length >= 9) {
+                document.getElementById("nameComm").innerText = `Túl hosszú`
+                document.getElementById("mothers").disabled = true
+            }
+        } else {
+            document.getElementById("nameComm").innerText = `Kötelező`
+            document.getElementById("mothers").disabled = true
+        }
+    });
+ 
+    document.getElementById("mothers").addEventListener("keyup", () => {
+        const mothersFeildValue = document.getElementById("mothers").value
+        if (mothersFeildValue != "") {
+            document.getElementById("mothersComm").innerText = `😂😂😂`
+            document.getElementById("email").disabled = false
+            console.log("reklam shown")
+        } else {
+            document.getElementById("mothersComm").innerText = `Kötelező`
+            document.getElementById("email").disabled = true
+        }
+        adBreak("https://live.staticflickr.com/7416/9568907345_78ba920cb8_b.jpg")
+    });
+ 
+    let adBreakGapForEmail = 4
+    let currentKeyUpForEmail = 0
+    document.getElementById("email").addEventListener("keyup", () => {
+        currentKeyUpForEmail++
+        const emailFeildValue = document.getElementById("email").value
+        if (emailFeildValue != "") {
+            if (!emailFeildValue.includes("@gmail.com")) {
+                document.getElementById("emailComm").innerText = `"@gmail.com" Kötelező!`
+                document.getElementById("tel").disabled = true
+            } else {
+                document.getElementById("emailComm").innerText = `Sending Spam!`
+                document.getElementById("tel").disabled = false
+            }
+        } else {
+            document.getElementById("emailComm").innerText = `Kötelező`
+            document.getElementById("tel").disabled = true
+        }
+        if (currentKeyUpForEmail%2==0 && adBreakGapForEmail != 0) {
+            if (adBreakGapForEmail == 4){
+                adBreak("https://c8.alamy.com/comp/2SAPPKW/3d-cny-mahjong-game-ad-template-2SAPPKW.jpg")
+            } else {
+                adBreak("https://th.bing.com/th/id/OIP.I1Ru_xDtlIDsBy2FoLVvowHaGD?w=199&h=180&c=7&r=0&o=7&pid=1.7&rm=3")
+            }
+        adBreakGapForEmail--
+        }
+    });
+ 
+    let currentKeyUpForTel = 0
+    document.getElementById("tel").addEventListener("keyup", () => {
+        currentKeyUpForTel++
+        const telFeildValue = document.getElementById("tel").value
+        if (telFeildValue != "") {
+            if (!telFeildValue.includes("+")) {
+                document.getElementById("telComm").innerText = `"+" Kötelező!`
+                document.getElementById("pass").disabled = true
+            } else {
+                document.getElementById("telComm").innerText = `Borzasztó számod van!`
+                document.getElementById("pass").disabled = false
+            }
+        } else {
+            document.getElementById("telComm").innerText = `Kötelező`
+            document.getElementById("pass").disabled = true
+        }
+        if (currentKeyUpForTel == 3){
+            adBreak("https://c8.alamy.com/comp/2SAPPKW/3d-cny-mahjong-game-ad-template-2SAPPKW.jpg")
+        } else {
+            adBreak("https://th.bing.com/th/id/OIP.I1Ru_xDtlIDsBy2FoLVvowHaGD?w=199&h=180&c=7&r=0&o=7&pid=1.7&rm=3")
+        }
+    });
+ 
+    document.getElementById("pass").addEventListener("keyup", () => {
+        const passFeildValue = document.getElementById("pass").value
+        if (passFeildValue != "") {
+            if (!passFeildValue.includes("$")) {
+                document.getElementById("passComm").innerText = `Kell bele: "$"`
+            } else if (!passFeildValue.includes("A")) {
+                document.getElementById("passComm").innerText = `Ne hagyd ki ezt sem: "A"`
+            } else if (!passFeildValue.includes("1")) {
+                document.getElementById("passComm").innerText = `"1"`
+            } else {
+                document.getElementById("passComm").innerText = `Hagyjuk csak beirom!`
+                document.getElementById("pass").value = `A$zta1`
+                document.getElementById("window").innerHTML += `
+<div class="inputs">
+<h2>Jelszó újra:</h2>
+<input type="text" id="pass2" autocomplete="off" disabled>
+<p id="passComm">kötelező</p>
+</div>
+                `
+ 
+            }
+        } else {
+            document.getElementById("passComm").innerText = `Kötelező`
+        }
+    });
+ 
+    document.getElementById("pass").addEventListener("keyup", () => {
+        const passFeildValue = document.getElementById("pass").value
+        if (passFeildValue != "" && passFeildValue == "A$zta1") {
+        } else {
+            document.getElementById("passComm").innerText = `Kötelező`
+        }
+    });
 </script>
 </body>
 </html>
