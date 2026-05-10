@@ -177,13 +177,3 @@ document.getElementById("continue-button").addEventListener("click", () => {
 
   alert("Sikeres regisztráció!")
 })
-
-document.getElementById("lang-button").addEventListener("click", () => {
-  const storedUsers = getStoredUsers()
-  console.log("All saved users:", storedUsers)
-})
-
-document.getElementById("light-mode-button").addEventListener("click", () => {
-  localStorage.clear()
-  alert("All localStorage data deleted!")
-})
