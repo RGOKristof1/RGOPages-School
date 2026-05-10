@@ -82,6 +82,9 @@
       padding: 1rem;
       border-radius: .5rem;
     }
+    h3{
+      font-size: .9rem;
+    }
     input{
       font-size: .6rem;
       width: 10rem;
@@ -105,6 +108,7 @@
       padding-top: .1rem;
       font-size: .5rem;
       color: rgb(255, 150, 150);
+      max-width: 9rem;
     }
     .comment-show{
       display: block;
@@ -161,18 +165,22 @@
   <h2>Login</h2>
   <main>
     <section id="inputs">
-      <div id="user">
+
+      <div>
         <h3>Username/email:</h3>
-        <input type="text" autocomplete="off">
-        <div class="comment ">Username/Email is not found!</div> <!--Have to give it the "comment-show" class to show!-->
+        <input id="user" type="text" autocomplete="off">
+        <div id="user-comment" class="comment ">Username/Email is not found!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
-      <div id="pass">
+
+      <div>
         <h3>Password:</h3>
-        <input type="password" autocomplete="off">
-        <div class="comment ">Wrong password!</div> <!--Have to give it the "comment-show" class to show!-->
-        <a id="forgot-pass" href="" title="password reset">Forgot password?</a> <!--MISSING HREF-->
+        <input id="pass" type="password" autocomplete="off">
+        <div id="pass-comment" class="comment ">Wrong password!</div> <!--Have to give it the "comment-show" class to show!-->
+        <a id="forgot-pass" href="/register/newpassword/" title="password reset">Forgot password?</a> <!--MISSING HREF-->
       </div>
+
       <button id="continue-button" class="continue-disabled">Continue</button> <!--Continue button is disabled with "continue-disabled" class!-->
+
     </section>
     <section>
       <h4>Don't have an account?</h4>

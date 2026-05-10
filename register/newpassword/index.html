@@ -9,12 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Register</title>
+  <title>Login</title>
   <style>
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
     *{
       box-sizing: border-box;
       margin: 0;
@@ -58,24 +54,6 @@
       justify-content: center;
       background-color: black;
     }
-    #corner-buttons{
-      position: fixed;
-      display: flex;
-      gap: .5rem;
-      top: .5rem;
-      left: .5rem;
-    }
-    #corner-buttons button{
-      height: 1.5rem;
-      width: 3rem;
-      font-size: .5rem;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: .2rem;
-      border: white 1px solid;
-      color: rgb(200, 255, 150);
-      padding: .1rem .2rem;
-      transition: all .3s;
-    }
     header{
       display: flex;
       justify-content: center;
@@ -107,7 +85,7 @@
     h3{
       font-size: .9rem;
     }
-    input,select{
+    input{
       font-size: .6rem;
       width: 10rem;
       padding: .2rem;
@@ -116,18 +94,14 @@
       border-radius: .2rem;
       border: white 1px solid;
     }
-    input:hover,select:hover{
+    input:hover{
       background-color: rgba(255, 255, 255, 0.20)
     }
-    input:focus,select:focus{
+    input:focus{
       outline-color: rgb(200, 255, 150);
       outline-width: 1px;
       outline-style: solid;
       outline-offset: -2px;
-    }
-    option{
-      background-color: rgb(67, 67, 67);
-      color: rgb(200, 255, 150);
     }
     .comment{
       display: none;
@@ -187,12 +161,8 @@
   </style>
 </head>
 <body>
-  <div id="corner-buttons">
-    <button id="lang-button">Lang</button>
-    <button id="light-mode-button">Light Mode</button>
-  </div>
   <header><h1><a href="https://school.rgopages.hu" title="SchoolDot home page" class="doto-uniquifier">SchoolDot</a></h1></header>
-  <h2>Register</h2>
+  <h2>Reset Password</h2>
   <main>
     <section id="inputs">
 
@@ -209,48 +179,25 @@
       </div>
 
       <div>
-        <h3>Phone number:</h3>
-        <input id="phone" type="tel" autocomplete="off" placeholder="06 30 123  4567">
-        <div id="phone-comment" class="comment ">Phone number is already registered!</div> <!--Have to give it the "comment-show" class to show!-->
+        <h3>New Password:</h3>
+        <input id="new-pass" type="password" autocomplete="off">
+        <div id="new-pass-comment" class="comment ">Password must be 8+ chars, with lower, upper and - _ % ! / $</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
 
       <div>
-        <h3>Date of birth:</h3>
-        <input id="birth" type="date" autocomplete="off">
-        <div id="birth-comment" class="comment "></div> <!--Have to give it the "comment-show" class to show!-->
-      </div>
-
-      <div>
-        <h3>Class:</h3>
-        <select id="class" name="classes">
-          <option value="11A">11A</option>
-          <option value="11B">11B</option>
-          <option value="11C">11C</option>
-          <option value="11D">11D</option>
-        </select>
-        <div id="class-comment" class="comment "></div> <!--Have to give it the "comment-show" class to show!-->
-      </div>
-
-      <div>
-        <h3>Password:</h3>
-        <input id="pass" type="password" autocomplete="off">
-        <div id="pass-comment" class="comment ">Password must be 8+ chars, with lower, upper and - _ % ! / $</div> <!--Have to give it the "comment-show" class to show!-->
-      </div>
-
-      <div>
-        <h3>Password confirm:</h3>
-        <input id="pass-confirm" type="password" autocomplete="off">
-        <div id="pass-confirm-comment" class="comment ">Passwords do not match!</div> <!--Have to give it the "comment-show" class to show!-->
+        <h3>New Password confirm:</h3>
+        <input id="new-pass-confirm" type="password" autocomplete="off">
+        <div id="new-pass-confirm-comment" class="comment ">Passwords do not match!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
 
       <button id="continue-button" class="continue-disabled">Continue</button> <!--Continue button is disabled with "continue-disabled" class!-->
 
     </section>
     <section>
-      <h4>Already have an account?</h4>
+      <h4>Remember your password?</h4>
       <a id="register" href="/login" title="login to an existing account">Login</a> <!--MISSING HREF-->
     </section>
   </main>
-<script src="register.js"></script>
+  
 </body>
 </html>
