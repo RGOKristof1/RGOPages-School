@@ -37,14 +37,6 @@
       font-variation-settings:
         "ROND" 100;
     }
-    .doto-uniquifier{
-      font-family: "Doto", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 300;
-      font-style: normal;
-      font-variation-settings:
-        "ROND" 100;
-    }
     a{
       color: inherit;
       text-decoration: none;
@@ -55,9 +47,10 @@
       transition: color .2s;
     }
     html{
-      font-size: clamp(12px, 2vw, 40px);
+      font-size: clamp(15px, 2vw, 40px);
       height: 100%;
       text-align: center;
+      scroll-behavior: smooth;
     }
     body{
       display: flex;
@@ -66,28 +59,13 @@
       justify-content: center;
       background-color: black;
     }
-    #corner-buttons{
-      position: fixed;
-      display: flex;
-      gap: .5rem;
-      top: .5rem;
-      left: .5rem;
-    }
-    #corner-buttons button{
-      height: 1.5rem;
-      width: 3rem;
-      font-size: .5rem;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: .2rem;
-      border: white 1px solid;
-      color: rgb(200, 255, 150);
-      padding: .1rem .2rem;
-      transition: all .3s;
-    }
     header{
+      position: relative;
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
+      height: 2rem;
       background-color: rgba(255, 255, 255, 0.073);
     }
     h1{
