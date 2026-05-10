@@ -222,5 +222,19 @@
     </section>
   </main>
 <script src="login.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis"></script>
+<script>
+const lenis = new Lenis({
+  duration: 1,
+  smoothWheel: true
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+</script>
 </body>
 </html>

@@ -50,6 +50,7 @@
       font-size: clamp(15px, 2vw, 40px);
       height: 100%;
       text-align: center;
+      scroll-behavior: smooth;
     }
     body{
       display: flex;
@@ -59,11 +60,13 @@
       background-color: black;
     }
     #corner-buttons{
-      position: fixed;
+      position: absolute;
       display: flex;
-      gap: .5rem;
-      top: .5rem;
-      left: .5rem;
+      justify-content: space-between;
+      align-items: center;
+      width: 99.5%;
+      height: 2rem;
+      top: 0;
     }
     #corner-buttons button{
       height: 1.5rem;
@@ -77,9 +80,12 @@
       transition: all .3s;
     }
     header{
+      position: relative;
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
+      height: 2rem;
       background-color: rgba(255, 255, 255, 0.073);
     }
     h1{
@@ -252,5 +258,19 @@
     </section>
   </main>
 <script src="register.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis"></script>
+<script>
+const lenis = new Lenis({
+  duration: 1,
+  smoothWheel: true
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+</script>
 </body>
 </html>
