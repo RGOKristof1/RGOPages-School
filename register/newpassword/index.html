@@ -11,6 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Login</title>
   <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
     *{
       box-sizing: border-box;
       margin: 0;
@@ -54,6 +58,24 @@
       justify-content: center;
       background-color: black;
     }
+    #corner-buttons{
+      position: fixed;
+      display: flex;
+      gap: .5rem;
+      top: .5rem;
+      left: .5rem;
+    }
+    #corner-buttons button{
+      height: 1.5rem;
+      width: 3rem;
+      font-size: .5rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: .2rem;
+      border: white 1px solid;
+      color: rgb(200, 255, 150);
+      padding: .1rem .2rem;
+      transition: all .3s;
+    }
     header{
       display: flex;
       justify-content: center;
@@ -85,7 +107,7 @@
     h3{
       font-size: .9rem;
     }
-    input{
+    input,select{
       font-size: .6rem;
       width: 10rem;
       padding: .2rem;
@@ -94,14 +116,18 @@
       border-radius: .2rem;
       border: white 1px solid;
     }
-    input:hover{
+    input:hover,select:hover{
       background-color: rgba(255, 255, 255, 0.20)
     }
-    input:focus{
+    input:focus,select:focus{
       outline-color: rgb(200, 255, 150);
       outline-width: 1px;
       outline-style: solid;
       outline-offset: -2px;
+    }
+    option{
+      background-color: rgb(67, 67, 67);
+      color: rgb(200, 255, 150);
     }
     .comment{
       display: none;
@@ -169,13 +195,13 @@
       <div>
         <h3>Username:</h3>
         <input id="username" type="text" autocomplete="off">
-        <div id="username-comment" class="comment ">Username is taken!</div> <!--Have to give it the "comment-show" class to show!-->
+        <div id="username-comment" class="comment ">Username is not registered!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
 
       <div>
         <h3>Email:</h3>
         <input id="email" type="email" autocomplete="off" placeholder="example@email.com">
-        <div id="email-comment" class="comment ">Email is already registered!</div> <!--Have to give it the "comment-show" class to show!-->
+        <div id="email-comment" class="comment ">Email is not matching the username!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
 
       <div>
@@ -198,6 +224,6 @@
       <a id="register" href="/login" title="login to an existing account">Login</a> <!--MISSING HREF-->
     </section>
   </main>
-  
+<script src="newpassword.js"></script>
 </body>
 </html>

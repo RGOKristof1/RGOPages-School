@@ -184,35 +184,78 @@
     #register:hover{
       color: rgb(200, 255, 150);
     }
+    #logout-button{
+      justify-self: center;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: .2rem;
+      border: white 2px solid;
+      color: rgb(255, 150, 150);
+      padding: .1rem .2rem;
+      transition: all .3s;
+    }
+    #logout-button:hover{
+      background-color: rgba(255, 255, 255, 0.20);
+      border: rgb(255, 170, 180) 2px solid;
+      color: rgb(255, 170, 180);
+      transition: all .2s;
+    }
   </style>
 </head>
 <body>
   <header><h1><a href="https://school.rgopages.hu" title="SchoolDot home page" class="doto-uniquifier">SchoolDot</a></h1></header>
-  <h2>Login</h2>
+  <h2>Account</h2>
   <main>
-    <section id="inputs">
+    <section id="informations">
 
       <div>
-        <h3>Username/email:</h3>
-        <input id="user" type="text" autocomplete="off">
-        <div id="user-comment" class="comment ">Username/Email is not found!</div> <!--Have to give it the "comment-show" class to show!-->
+        <h3>Username:</h3>
+        <input id="username" type="text" autocomplete="off" disabled>
+        <div id="username-comment" class="comment ">Username is taken!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
 
       <div>
-        <h3>Password:</h3>
-        <input id="pass" type="password" autocomplete="off">
-        <div id="pass-comment" class="comment ">Wrong password!</div> <!--Have to give it the "comment-show" class to show!-->
-        <a id="forgot-pass" href="/register/newpassword/" title="password reset">Forgot password?</a> <!--MISSING HREF-->
+        <h3>Email:</h3>
+        <input id="email" type="email" autocomplete="off" placeholder="example@email.com" disabled>
+        <div id="email-comment" class="comment ">Email is already registered!</div> <!--Have to give it the "comment-show" class to show!-->
       </div>
+
+      <div>
+        <h3>Phone number:</h3>
+        <input id="phone" type="tel" autocomplete="off" placeholder="06 30 123  4567" disabled>
+        <div id="phone-comment" class="comment ">Phone number is already registered!</div> <!--Have to give it the "comment-show" class to show!-->
+      </div>
+
+      <div>
+        <h3>Date of birth:</h3>
+        <input id="birth" type="date" autocomplete="off" disabled>
+        <div id="birth-comment" class="comment "></div> <!--Have to give it the "comment-show" class to show!-->
+      </div>
+
+      <div>
+        <h3>Class:</h3>
+        <select id="class" name="classes" disabled>
+          <option value="11A">11A</option>
+          <option value="11B">11B</option>
+          <option value="11C">11C</option>
+          <option value="11D">11D</option>
+        </select>
+        <div id="class-comment" class="comment "></div> <!--Have to give it the "comment-show" class to show!-->
+      </div>
+
+      <a id="forgot-pass" href="/register/newpassword/" title="password reset">Reset password?</a> <!--MISSING HREF-->
 
       <button id="continue-button" class="continue-disabled">Continue</button> <!--Continue button is disabled with "continue-disabled" class!-->
 
     </section>
     <section>
-      <h4>Don't have an account?</h4>
-      <a id="register" href="/register" title="register a new account">Register</a> <!--MISSING HREF-->
+      <h4>Login to a different account?</h4>
+      <a id="register" href="/login" title="login to an existing account">Login</a>
+    </section>
+    <section>
+      <button id="logout-button">Logout</button>
     </section>
   </main>
-<script src="login.js"></script>
+<script src="account.js"></script>
 </body>
 </html>
