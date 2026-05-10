@@ -27,7 +27,7 @@ const passConfirmComment = document.getElementById("pass-confirm-comment")
 
 const invalidUsernameChars = [" ", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "{", "}", "[", "]", "|", "\\", "/", "?", "<", ">"]
 const emailRegex = /^[^\s@]+@blathy\.info$/
-const phoneRegex = /^(06)(20|30|50|70)\d{7}$/
+const phoneRegex = /^(06|\+36)(20|30|50|70)\d{7}$/
 const birthRegex = /^(2006|2007|2008|2009|2010|2011|2012)-\d{2}-\d{2}$/
 const classRegex = /^\d{2}[A-Z]$/
 const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[-_%!/$])[A-Za-z\d-_%!/$]{8,}$/
