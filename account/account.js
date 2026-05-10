@@ -26,3 +26,17 @@ document.getElementById("logout-button").addEventListener("click", () => {
   localStorage.removeItem("currentlogedinuser")
   window.location.href = "/login"
 })
+
+document.getElementById("delete-account-button").addEventListener("click", () => {
+  const currentUser = localStorage.getItem("currentlogedinuser")
+  if (!currentUser) {
+    window.location.href = "/login"
+    return
+  }
+
+  const storedUsers = JSON.parse(localStorage.getItem("students") || "[]")
+  const remainingUsers = storedUsers.filter(u => u.userName !== currentUser)
+  localStorage.setItem("students", JSON.stringify(remainingUsers))
+  localStorage.removeItem("currentlogedinuser")
+  window.location.href = "/login"
+})
