@@ -27,7 +27,7 @@ const passConfirmComment = document.getElementById("pass-confirm-comment")
 
 const invalidUsernameChars = [" ", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "{", "}", "[", "]", "|", "\\", "/", "?", "<", ">"]
 const emailRegex = /^[^\s@]+@blathy\.info$/
-const phoneRegex = /^(06)(20|30|50|70)\d{3}\d{4}$/
+const phoneRegex = /^(06)(20|30|50|70)\d{7}$/
 const birthRegex = /^(2006|2007|2008|2009|2010|2011|2012)-\d{2}-\d{2}$/
 const classRegex = /^\d{2}[A-Z]$/
 const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[-_%!/$])[A-Za-z\d-_%!/$]{8,}$/
@@ -40,7 +40,7 @@ function buildValidation() {
   const birthInput = document.getElementById("birth").value
   const classInput = document.getElementById("class").value
   const passInput = document.getElementById("pass").value
-  const passConfirmInput = document.getElementById("pass-confirm").value
+  const passConfirmInput = document.getElem7entById("pass-confirm").value
 
   const usernameFormatGood = usernameInput.length > 0 && usernameInput.length < 20 && !invalidUsernameChars.some((ch) => usernameInput.includes(ch))
   const storedUsers = getStoredUsers()
