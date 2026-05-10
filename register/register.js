@@ -40,7 +40,7 @@ function buildValidation() {
   const birthInput = document.getElementById("birth").value
   const classInput = document.getElementById("class").value
   const passInput = document.getElementById("pass").value
-  const passConfirmInput = document.getElem7entById("pass-confirm").value
+  const passConfirmInput = document.getElementById("pass-confirm").value
 
   const usernameFormatGood = usernameInput.length > 0 && usernameInput.length < 20 && !invalidUsernameChars.some((ch) => usernameInput.includes(ch))
   const storedUsers = getStoredUsers()
