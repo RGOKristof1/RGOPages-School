@@ -192,7 +192,7 @@
     #register:hover{
       color: rgb(200, 255, 150);
     }
-    #logout-button{
+    .extra-buttons{
       justify-self: center;
       font-size: 1rem;
       background-color: rgba(255, 255, 255, 0.15);
@@ -202,7 +202,7 @@
       padding: .1rem .2rem;
       transition: all .3s;
     }
-    #logout-button:hover{
+    .extra-buttons:hover{
       background-color: rgba(255, 255, 255, 0.20);
       border: rgb(255, 170, 180) 2px solid;
       color: rgb(255, 170, 180);
@@ -261,10 +261,10 @@
       <a id="register" href="/login" title="login to an existing account">Login</a>
     </section>
     <section>
-      <button id="logout-button">Logout</button>
+      <button id="logout-button" class="extra-buttons">Logout</button>
     </section>
     <section>
-      <button id="delete-account-button">Delete Account</button>
+      <button id="delete-account-button" class="extra-buttons">Delete Account</button>
     </section>
   </main>
 <script src="account.js"></script>
