@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Főoldal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+      /*Font*/
+      font-family: "Cormorant Garamond", serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+    }
+    html{
+      font-size: clamp(15px, 2vw, 40px);
+      height: 100%;
+    }
+    body{
+      height: 100%;
+      background-color: black;
+    }
+    header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+    }
+    h1{
+      text-align: center;
+      font-size: 2rem;
+      width: 10rem;
+      border-bottom: white 1px solid;
+    }
+    main{
+      display: grid;
+      justify-content: center;
+      gap: 1rem;
+    }
+    section{
+      display: grid;
+      width: 20rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border: white 1px solid;
+      border-radius: 1rem;
+    }
+    h2{
+      justify-self: start;
+      font-size: 1rem;
+    }
+    button{
+      justify-self: end;
+      font-size: .6rem;
+      font-weight: bold;
+      padding: .2rem .4rem;
+      color: black;
+      border-radius: .3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Főoldal</h1>
+  </header>
+  <main>
+    <section id="no-valid-pass">
+      <h2>Még nincs érvényes tagsága!</h2>
+      <button>Tagság igénylése</button>
+    </section>
+    <section class="pass">
+      <h2></h2>
+    </section>
+  </main>
+</body>
+</html>
