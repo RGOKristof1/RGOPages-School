@@ -170,6 +170,24 @@
     #register:hover{
       color: rgb(200, 255, 150);
     }
+    .extra-buttons{
+      justify-self: center; 
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: .2rem;
+      border: white 1px solid;
+      color: rgb(255, 150, 150);
+      padding: .1rem .2rem;
+      transition: all .3s;
+    }
+    #logout-button:hover{
+      border: rgb(255, 170, 180) 1px solid;
+      color: rgb(255, 170, 180);
+    }
+    #delete-account-button:hover{
+      border: rgb(255, 170, 180) 1px solid;
+      color: rgb(255, 170, 180);
+    }
   </style>
 </head>
 <!--yo-->
@@ -216,8 +234,6 @@
 
       <a id="forgot-pass" href="/register/newpassword/" title="password reset">Reset password?</a> <!--MISSING HREF-->
 
-      <button id="continue-button" class="continue-disabled">Continue</button> <!--Continue button is disabled with "continue-disabled" class!-->
-
     </section>
     <section>
       <h4>Login to a different account?</h4>
@@ -231,19 +247,5 @@
     </section>
   </main>
 <script src="account.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis"></script>
-<script>
-const lenis = new Lenis({
-  duration: 1,
-  smoothWheel: true
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
-</script>
 </body>
 </html>
